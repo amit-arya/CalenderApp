@@ -12,11 +12,11 @@ class CalenderHelper {
     let calender = Calendar.current
     
     func plusMonth(date: Date)-> Date{
-        return calender.date(byAdding: .month, value: 1, to: date)!
+        return calender.date(byAdding: .month, value: 1, to: date) ?? Date()
     }
     
     func minusMonth(date: Date)-> Date{
-        return calender.date(byAdding: .month, value: -1, to: date)!
+        return calender.date(byAdding: .month, value: -1, to: date) ?? Date()
     }
     
     func monthString(date: Date)-> String{
