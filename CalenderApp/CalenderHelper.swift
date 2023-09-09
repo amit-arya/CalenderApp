@@ -38,16 +38,16 @@ class CalenderHelper {
     
     func dayOfMonth(date: Date) -> Int{
         let components = calender.dateComponents([.day], from: date)
-        return components.day!
+            return components.day ?? 0
     }
     
     func firstOfMonth(date: Date)->Date{
         let components = calender.dateComponents([.year, .month], from: date)
-        return calender.date(from: components)!
+        return calender.date(from: components) ?? Date()
     }
     
     func weekDay(date: Date)-> Int{
         let components = calender.dateComponents([.weekday], from: date)
-        return components.weekday! - 1
+        return (components.weekday ?? 1) - 1
     }
 }
